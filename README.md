@@ -1,9 +1,9 @@
 # Trainable NER with Spacy
 This UI helps in classification of entities and persist them to a DB
 
-##Before Training for the new entities
+## Before Training for the new entities
 ![Run the Parser](images/AppScreenShot3.jpg)
-##After training for the new entities
+## After training for the new entities
 ![Run the Parser](images/AppScreenShot4.jpg)
 
 
