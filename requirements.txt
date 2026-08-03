@@ -1,0 +1,5 @@
+Flask
+spacy
+pandas
+SQLAlchemy
+flask_sqlalchemy
