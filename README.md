@@ -4,7 +4,7 @@ This UI helps in classification of entities and persist them to a DB
 ## Before Training for the new entities
 ![Run the Parser](images/AppScreenShot3.jpg)
 ## After training for the new entities
-![Run the Parser](images/AppScreenShot4.jpg)
+![Run the Parser](images/AppScreenshot3_AfterTrg)
 
 
 ## UI Guide
