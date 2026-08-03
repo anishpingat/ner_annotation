@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Review</title>
+
+<style>
+
+mark{
+padding:4px;
+margin:2px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Detected Entities</h2>
+
+{{ displacy_html|safe }}
+
+<hr>
+
+<form action="/save" method="post">
+
+<input
+type="hidden"
+name="text"
+value="{{text}}">
+
+<table border="1">
+
+<tr>
+
+<th>Entity</th>
+
+<th>Current</th>
+
+<th>New Label</th>
+
+</tr>
+
+{% for ent in entities %}
+
+<tr>
+
+<td>{{ent.text}}</td>
+
+<td>{{ent.label}}</td>
+
+<td>
+
+<select name="label_{{loop.index0}}">
+
+{% for l in labels %}
+
+<option
+value="{{l}}"
+{% if l==ent.label %}selected{% endif %}>
+
+{{l}}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<input type="submit" value="Save">
+
+</form>
+
+</body>
+
+</html>

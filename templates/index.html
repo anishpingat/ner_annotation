@@ -1,0 +1,163 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+    <title>spaCy Annotation Tool</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            margin:40px;
+        }
+
+        textarea{
+            width:100%;
+            height:180px;
+        }
+
+        table{
+            border-collapse:collapse;
+            width:100%;
+        }
+
+        td,th{
+            border:1px solid gray;
+            padding:8px;
+        }
+        
+        .word-cloud {
+            width: 800px;
+            margin: 30px auto;
+            line-height: 2.2;
+            text-align: center;
+        }
+
+        .word {
+            display: inline-block;
+            margin: 6px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: transform .2s;
+        }
+
+        .word:hover {
+            transform: scale(1.2);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>Document</h2>
+
+<form action="/process" method="post">
+
+<textarea name="text">{{text}}</textarea>
+
+<br><br>
+
+<input type="submit" value="Run spaCy">
+
+</form>
+
+{% if html %}
+
+<hr>
+
+<h2>Entities</h2>
+
+{{html|safe}}
+
+{% endif %}
+<hr>
+
+<h2>Bag of Words</h2>
+
+<div class="word-cloud">
+    {% for word in words %}
+        <span class="word"
+              style="font-size: {{ word.size }}px;
+                     color: {{ word.color }}">
+            {{ word.text }}
+        </span>
+    {% endfor %}
+</div>
+
+<hr>
+
+<h2>Reclassify</h2>
+
+<form action="/save" method="post">
+
+<input type="hidden" name="text" value="{{text}}">
+
+<table>
+
+<tr>
+
+<th>Sentence</th>
+
+<th>Entity</th>
+
+<th>Start</th>
+
+<th>End</th>
+
+<th>Current</th>
+
+<th>New Label</th>
+
+</tr>
+
+{% for e in entities %}
+
+<tr>
+ 
+<td>{{e.sentence}}</td>
+
+<td>{{e.text}}</td>
+
+<td>{{e.start}}</td>
+
+<td>{{e.end}}</td>
+
+<td>{{e.label}}</td>
+
+<td>
+
+<select name="label_{{e.index}}">
+
+{% for l in labels %}
+
+<option value="{{l}}" {% if l==e.label %}selected{% endif %}>
+
+{{l}}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<input type="submit" value="Save Annotation">
+
+</form>
+
+</body>
+
+</html>
