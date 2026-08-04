@@ -1,6 +1,10 @@
 # Trainable NER with Spacy
 This UI helps in classification of entities and persist them to a DB
 
+## Block Diagram
+![Block Diagram](images/BlockDiagram.jpg)
+
+
 ## Before Training for the new entities
 ![Run the Parser](images/AppScreenShot3.jpg)
 ## After training for the new entities
@@ -12,16 +16,16 @@ This UI helps in classification of entities and persist them to a DB
 ### 1. Provide the input text here and click the "Run Spacy" button
 ![Run the Parser](images/AppScreenShot1.jpg)
 ### 2. This section shows entities that have been currently detected along with their types
-![Run the Parser](images/AppScreenShot1a.jpg)
+![Entities](images/AppScreenShot1a.jpg)
 ### 3. This is a "Bag of Words" section so that we can get an intutive context of the above text
-![Run the Parser](images/AppScreenShot2.jpg)
+![Bag of words](images/AppScreenShot2.jpg)
 ### 4. This section allows for reclassification of the detected entities and persist them to a Database
-![Run the Parser](images/AppScreenShot2a.jpg)
+![Reclassify](images/AppScreenShot2a.jpg)
 #### a. The new reclassified entities have been saved to the DB
 #### b. Some validations for duplicates etc. are performed before saving
-![Run the Parser](images/AppScreenShot5.jpg)
+![Persisting](images/AppScreenShot5.jpg)
 ### 5. This page provides the delete ability to remove the label entries from the DB
-![Run the Parser](images/AppScreenShot6.jpg)
+![DB CRUD](images/AppScreenShot6.jpg)
 
 ## Training for the new entities
 ### Convert the data
