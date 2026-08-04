@@ -18,8 +18,8 @@ This UI helps in classification of entities and persist them to a DB
 ### 4. This section allows for reclassification of the detected entities and persist them to a Database
 ![Run the Parser](images/AppScreenShot2a.jpg)
 #### a. The new reclassified entities have been saved to the DB
+#### b. Some validations for duplicates etc. are performed before saving
 ![Run the Parser](images/AppScreenShot5.jpg)
-#### b. Some validations for duplicates etc. are performed before saving 
 ### 5. This page provides the delete ability to remove the label entries from the DB
 ![Run the Parser](images/AppScreenShot6.jpg)
 
