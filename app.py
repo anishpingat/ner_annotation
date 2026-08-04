@@ -9,6 +9,8 @@ from flask import redirect, url_for
 from sqlalchemy import func
 import random
 
+import os
+
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -307,4 +309,5 @@ def delete_annotation(id):
     return redirect(url_for("dataframe"))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port,debug=True)
