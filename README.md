@@ -64,13 +64,10 @@ My application uses the following pipeline:
  
 So, I need the above components from the Spacy library, copying them thus : 
    ```
-    cp -r /myuserxx/jupyter_env/lib/python3.13/site-packages/en_core_web_sm/en_core_web_sm-3.8.0/senter /myuserxx/ner_annotation/output/model-last/
-	cp -r /myuserxx/jupyter_env/lib/python3.13/site-packages/en_core_web_sm/en_core_web_sm-3.8.0/parser /myuserxx/ner_annotation/output/model-last/
-	cp -r /myuserxx/jupyter_env/lib/python3.13/site-packages/en_core_web_sm/en_core_web_sm-3.8.0/senter /myuserxx/ner_annotation/output/model-last/
-	cp -r /myuserxx/jupyter_env/lib/python3.13/site-packages/en_core_web_sm/en_core_web_sm-3.8.0/parser /myuserxx/ner_annotation/output/model-last/
+        cp -r /myuserxx/jupyter_env/lib/python3.13/site-packages/en_core_web_sm/en_core_web_sm-3.8.0/senter /myuserxx/ner_annotation/output/model-last/
 	cp -r /myuserxx/jupyter_env/lib/python3.13/site-packages/en_core_web_sm/en_core_web_sm-3.8.0/lemmatizer /myuserxx/ner_annotation/output/model-last/
 	cp -r /myuserxx/jupyter_env/lib/python3.13/site-packages/en_core_web_sm/en_core_web_sm-3.8.0/parser /myuserxx/ner_annotation/output/model-last/
-	cp -r /myuserxx/jupyter_env/lib/python3.13/site-packages/en_core_web_sm/en_core_web_sm-3.8.0/senter /myuserxx/ner_annotation/output/model-last/
+
    ```
 **The app now recoginises the new entities it was trained on**
 
