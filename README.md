@@ -29,7 +29,7 @@ This UI helps in classification of entities and persist them to a DB
 
 ## Training for the new entities
 ### Convert the data
-The above newly extracted data needs to be converted to IOB format for spacy to train.
+The above newly extracted data needs to be converted to IOB format for Spacy to train.
 Meaning it has a certain structure wherein the entities within a sentence have a start, end offset. 
 Also, there can be multiple entities in a sentence.
 
@@ -55,7 +55,7 @@ The command used to train using the the extracted spacy files is:
    python -m spacy train config.cfg --output ./output --paths.train ./trainingData/train_data.spacy --paths.dev ./trainingData/test_data.spacy --initialize.init_tok2vec en_core_web_sm
    ``` 
    
-The switch --initialize does an initialization of the tok2vec layer of your model using the pretrained weights from the en_core_web_sm model instead of starting from random weights.
+The switch --initialize does an initialization of the tok2vec layer of the model using the pretrained weights from the en_core_web_sm model instead of starting from random weights.
 
 ## Running the app using newly trained data
 ### Make sure that the data is loaded
@@ -72,7 +72,7 @@ So, I need the above components from the Spacy library, copying them thus :
 	cp -r /myuserxx/jupyter_env/lib/python3.13/site-packages/en_core_web_sm/en_core_web_sm-3.8.0/parser /myuserxx/ner_annotation/output/model-last/
 	cp -r /myuserxx/jupyter_env/lib/python3.13/site-packages/en_core_web_sm/en_core_web_sm-3.8.0/senter /myuserxx/ner_annotation/output/model-last/
    ```
-**The app now recoginises the newly entities it was trained on**
+**The app now recoginises the new entities it was trained on**
 
 ## Hardware used to train model
 Raspberry Pi4GB
